@@ -1,0 +1,12 @@
+<div ng-controller="akunOverviewCtrl">
+	<div class="col-xs12 col-md-6">
+		<p><strong>Overview</strong></p>
+		<div>
+			<h4><span class="glyphicon glyphicon-user"></span> User <strong>{{user | uppercase}} </strong></h4>
+			<h4><span class="glyphicon glyphicon-cog"></span> Hak Akses <strong>{{role | uppercase}}</strong></h4>
+		</div>
+        <div>
+        	<a ui-sref="app.admin.akun.overview.password" class="btn"><i class="fa fa-edit"></i> Update Password</a>
+        </div>
+		<ui-view></ui-view>
+</div>

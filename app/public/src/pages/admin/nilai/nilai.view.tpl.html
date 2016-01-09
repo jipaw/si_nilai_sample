@@ -1,0 +1,29 @@
+<div ng-controller="ngTableNilaiCtrl">
+    <table ng-table="tableParams" class="table ng-table-responsive ng-table-rowselected ">
+        <tr ng-repeat="nilai in $data" ng-click='nilai.$selected = !nilai.$selected; changeSelection(nilai)' ng-class="{'active': nilai.$selected}">
+            <td data-title="'NPM'" sortable="'no_induk'"> {{nilai.NPM}}
+            </td>
+            <td data-title="'Nama'"> {{nilai.nama}}
+            </td>
+            <td data-title="'Mata Kuliah'"> {{nilai.idmata_kuliah}}
+            </td>
+            <td data-title="'SKS'"> {{nilai.sks}}
+            </td>
+            <td data-title="'Kehadiran'"> {{nilai.kehadiran}}
+            </td>
+            <td data-title="'Tugas'"> {{nilai.tugas}}
+            </td>
+            <td data-title="'UTS'"> {{nilai.uts}}
+            </td>
+            <td data-title="'UAS'"> {{nilai.uas}}
+            </td>
+            <td data-title="'Nilai Akhir'"> {{nilai.nilai_akhir}}
+            </td>
+            <!--<td data-title="''">-->
+               <!--&lt;!&ndash; <a href="#" class="btn"><i class="fa fa-edit"></i></a> &ndash;&gt;-->
+                <!--&lt;!&ndash;<a class="btn" ng-click="deleteData()"><i class="fa fa-trash-o"></i></a>&ndash;&gt;-->
+            <!--</td>-->
+        </tr>
+    </table>
+</div>
+

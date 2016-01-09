@@ -1,0 +1,35 @@
+<form name="jurusanForm"  class="form-apps" role="administration" ng-submit="submit(jurusanForm)" ng-controller="JurusanAddCtrl" novalidate>
+	<div class="well well-sm">
+		<!-- Form Name -->
+
+		  <div class="alert alert-success">
+		    		<legend class="text-center">JURUSAN</legend>
+		    <p class="text-center"></p>
+		  </div>
+
+		<!-- Text input-->
+		<div class="row" ng-class="{ 'has-error' : jurusanForm.id.$invalid && !jurusanForm.id.$pristine }">
+			<label class="col-xs-4">ID </label>  
+			<div class="col-xs-7" >
+			<input name="id" ng-model="jurusanObj.id" type="text" placeholder="Kode Jurusan" class="form-control input-xs input-sm" required>
+				<p ng-show="jurusanForm.id.$invalid && !jurusanForm.id.$pristine" class="help-block">id kelas harus diisi</p>
+			</div>
+		</div>
+
+
+		<!-- Text input-->
+		<div class="row" ng-class="{ 'has-error' : jurusanForm.nama.$invalid && !jurusanForm.nama.$pristine }">
+			<label class="col-xs-4">Nama kelas</label>  
+			<div class="col-xs-7" >
+			<input name="nama" ng-model="jurusanObj.nama" type="text" placeholder="Nama Jurusan" class="form-control input-xs input-sm" required>
+				<p ng-show="jurusanForm.nama.$invalid && !jurusanForm.nama.$pristine" class="help-block">Nama kelas harus diisi</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<button class="btn btn-lg btn-block btn-success" type="submit" 
+					ng-disabled="jurusanForm.$invalid || jurusanForm.$pristine"> Input
+			</button>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,106 @@
+<form name="nilaiForm"  class="form-apps" role="administration" ng-submit="submit(nilaiForm)" ng-controller="NilaiAddCtrl" novalidate>
+	<div class="well well-sm">
+		<!-- Form Name -->
+
+		  <div class="alert alert-success">
+		    		<legend class="text-center">NILAI</legend>
+		    <p class="text-center"></p>
+		  </div>
+
+		<!-- Text input-->
+		<div class="row" ng-class="{ 'has-error' : nilaiForm.npm.$invalid && !nilaiForm.npm.$pristine }">
+			<label class="col-xs-4">NPM</label>  
+			<div class="col-xs-7" >
+			<input name="npm" ng-model="nilaiObj.npm" type="text" placeholder="NPM" class="form-control input-xs input-sm" required>
+				<p ng-show="nilaiForm.npm.$invalid && !nilaiForm.npm.$pristine" class="help-block">NPM harus diisi</p>
+			</div>
+		</div>
+
+
+		<!-- Text input-->
+		<div class="row" ng-class="{ 'has-error' : nilaiForm.idmata_kuliah.$invalid && !nilaiForm.idmata_kuliah.$pristine }">
+			<label class="col-xs-4">Kode Mata Kuliah </label>
+			<div class="col-xs-7" >
+			<input name="idmata_kuliah" ng-model="nilaiObj.idmata_kuliah" type="text" placeholder="Kode Mata Kuliah" class="form-control input-xs input-sm" required>
+				<p ng-show="nilaiForm.idmata_kuliah.$invalid && !nilaiForm.idmata_kuliah.$pristine" class="help-block">Kode harus diisi</p>
+			</div>
+		</div>
+
+		<!-- Text input-->
+		<div class="row" ng-class="{ 'has-error' : nilaiForm.idSemester.$invalid && !nilaiForm.idSemester.$pristine }">
+			<label class="col-xs-4">Kode Semester</label>
+			<div class="col-xs-7" >
+			<input name="idSemester" ng-model="nilaiObj.idSemester" type="text" placeholder="Kode Semester" class="form-control input-xs input-sm" required>
+				<p ng-show="nilaiForm.idSemester.$invalid && !nilaiForm.idSemester.$pristine" class="help-block">Kode Semester harus diisi</p>
+			</div>
+		</div>
+
+    <!-- Select Basic -->
+    <div class="row" ng-class="{ 'has-error' : nilaiForm.semester_berjalan.$invalid }">
+      <label class="col-xs-4 " >Semester</label>
+      <div class="col-xs-7">
+        <select  name="semester_berjalan" ng-model="nilaiObj.semester_berjalan" class="form-control input-sm">
+          <option value="I">I</option>
+          <option value="II">II</option>
+          <option value="III">III</option>
+          <option value="IV">IV</option>
+          <option value="V">V</option>
+          <option value="VI">VI</option>
+          <option value="VII">VII</option>
+          <option value="VIII">VIII</option>
+        </select>
+      </div>
+    </div>
+
+		<!-- Text input-->
+		<div class="row" ng-class="{ 'has-error' : nilaiForm.kehadiran.$invalid && !nilaiForm.kehadiran.$pristine }">
+			<label class="col-xs-4">Kehadiran</label>  
+			<div class="col-xs-7" >
+			<input name="kehadiran" ng-model="nilaiObj.kehadiran" type="number" placeholder="Nilai Kehadiran" class="form-control input-xs input-sm" >
+			</div>
+		</div>
+		<!-- Text input-->
+		<div class="row" ng-class="{ 'has-error' : nilaiForm.tugas.$invalid  }">
+			<label class="col-xs-4">Tugas</label>  
+			<div class="col-xs-7" >
+			<input name="tugas" ng-model="nilaiObj.tugas" type="number" placeholder="Nilai Tugas" class="form-control input-xs input-sm" >
+			</div>
+		</div>
+
+		<!-- Text input-->
+		<div class="row" ng-class="{ 'has-error' : nilaiForm.uts.$invalid}">
+			<label class="col-xs-4">UTS</label>  
+			<div class="col-xs-7" >
+			<input name="uts" ng-model="nilaiObj.uts" type="number" placeholder="Nilai UTS" class="form-control input-xs input-sm" >
+			</div>
+		</div>
+
+		<!-- Text input-->
+		<div class="row" ng-class="{ 'has-error' : nilaiForm.uas.$invalid }">
+			<label class="col-xs-4">UAS</label>  
+			<div class="col-xs-7" >
+			<input name="uas" ng-model="nilaiObj.uas" type="number" placeholder="Nilai UAS" class="form-control input-xs input-sm" >
+			</div>
+		</div>
+
+		<!-- Select Basic -->
+		<div class="row" ng-class="{ 'has-error' : nilaiForm.nilaiAkhir.$invalid }">
+			<label class="col-xs-4 " >Nilai Akhir</label>
+			<div class="col-xs-7">
+				<select  name="nilaiAkhir" ng-model="nilaiObj.nilaiAkhir" class="form-control input-sm">
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="row">
+			<button class="btn btn-lg btn-block btn-success" type="submit"
+					ng-disabled="nilaiForm.$invalid || nilaiForm.$pristine"> Input
+			</button>
+		</div>
+	</div>
+</form>

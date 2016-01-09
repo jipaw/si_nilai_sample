@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html ng-app="PAUDku">
+  <head>
+    <title>Sistem Informasi Pendataan</title>
+
+    <!-- BootstrapCDN -->
+    <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet"> -->
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <!-- compiled css -->
+    <link href="/css/style.css" rel="stylesheet">
+
+    <script type="text/javascript" src="build/libs.js"></script>
+    <!--<script type="text/javascript" src="dist/app-all.min.js"></script>-->
+    <script type="text/javascript" src="build/app.js"></script>
+    <script type="text/javascript" src="dist/templates-app.js"></script>
+
+
+  </head>
+  <body ng-controller="BodyController">
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="visible-xs navbar-brand">Navbar Menu</span>
+        </div>
+        <div class="navbar-collapse collapse sidebar-navbar-collapse" ng-class="{'in':!navCollapsed}">
+          <!-- Navbar links -->
+          <ul class="nav navbar-nav">
+            <li ng-class="{ active: $state.is('app.home') }">
+              <a ui-sref="app.home"><span class="fa fa-home"></span> Home</a>
+            </li>
+            <li ng-class="{ active: $state.is('app.admin.overview') }" ng-show="ls.isLoggedAdmin">
+              <a ui-sref="app.admin.overview"><span class="fa fa-wrench"></span> Admin</a>
+            </li>
+            <li ng-class="{ active: $state.is('app.user.biodata') }" ng-show="ls.isLoggedUser">
+              <a ui-sref="app.user.biodata"> Data Mahasiswa</a>
+            </li>
+            <li ng-class="{ active: $state.is('app.nilai.view') }" ng-show="ls.isLoggedUser">
+              <a ui-sref="app.nilai.view"> Nilai</a>
+            </li>
+    <!--
+            <li ng-class="{ active: $state.is('app.user') }">
+              <a ui-sref="app.user">Registered-Only page</a>
+            </li>
+              <li ng-class="{ active: $state.is('app.register') }">
+                <a ui-sref="app.register">Register <i class="fa fa-user"></i>+</a>
+              </li>
+    -->
+          </ul>
+          <!-- Right side of the navbar -->
+          <!-- Spinner -->
+          <button class="btn btn-default navbar-btn navbar-right" ng-hide="ls.doneLoading">
+            <i class="fa fa-spinner fa-spin"></i>
+          </button>
+          <!-- Logout Form -->
+          <form class="navbar-form navbar-right" role="logout" ng-submit="logoutMe()" ng-show="ls.isLogged">
+            <!--<div class="form-group">-->
+              <!--<label>Hello {{ ls.user.name }}</label>-->
+            <!--</div>-->
+            <div class="form-group">
+              <button  type="submit" class="btn btn-success btn-outline">Logout <i class="fa fa-power-off"></i></button>
+            </div>
+          </form>
+          <form class="navbar-form navbar-right" role="logout" ng-submit="logoutMe()" ng-hide="ls.isLogged">
+            <div class="form-group">
+              <button  type="submit" class="btn btn-success btn-outline"><a ui-sref="app.register">Register <i class="fa fa-user"></i>+</a></button>
+            </div>
+          </form>
+        </div>
+        <div class="confirm-message" ng-class="{ 'active': login.wrong }">
+          <div class="alert alert-danger"><b>Error:</b> Username atau password salah</div>
+        </div>
+        <div class="confirm-message" ng-class="{ 'active': add.success }">
+          <div class="alert alert-success"><b>Success:</b> Input Berhasil</div>
+        </div>
+        <div class="confirm-message" ng-class="{ 'active': add.failed }">
+          <div class="alert alert-danger"><b>Error:</b> Input Gagal</div>
+        </div>
+        <div class="confirm-message" ng-class="{ 'active': remove.success }">
+          <div class="alert alert-success"><b>Success:</b> Delete Berhasil</div>
+        </div>
+        <div class="confirm-message" ng-class="{ 'active': remove.failed }">
+          <div class="alert alert-danger"><b>Error:</b> Delete Gagal</div>
+        </div>
+       <!--
+       <div class="submit-error" ng-class="{ 'active': submit.error }">
+          <div class="alert alert-danger"><b>Error:</b> Input tidak berhasil</div>
+        </div>
+      -->
+      </div>
+      </div>
+      <div class="container">
+        <ui-view ng-hide="doingResolve"></ui-view>
+        <div class="jumbotron loading-jumbo" ng-show="doingResolve">
+          <h1><i class="fa fa-refresh fa-2x fa-spin"></i> Loading</h1>
+        </div>
+      </div>
+
+<div class="container">
+    <div class="footer">
+      <div class="container">
+        <p class="text-muted text-center">Copyright © 2014 by Jipaw </p>
+      </div>
+    </div>
+</div>
+
+  </body>
+</html>

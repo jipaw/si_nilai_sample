@@ -1,0 +1,35 @@
+<form name="kelasForm"  class="form-apps" role="administration" ng-submit="submit(kelasForm)" ng-controller="KelasAddCtrl" novalidate>
+	<div class="well well-sm">
+		<!-- Form Name -->
+
+		  <div class="alert alert-success">
+		    		<legend class="text-center">KELAS</legend>
+		    <p class="text-center"></p>
+		  </div>
+
+		<!-- Text input-->
+		<div class="row" ng-class="{ 'has-error' : kelasForm.id.$invalid && !kelasForm.id.$pristine }">
+			<label class="col-xs-4">ID </label>  
+			<div class="col-xs-7" >
+			<input name="id" ng-model="kelasObj.id" type="text" placeholder="Kode Kelas" class="form-control input-xs input-sm" required>
+				<p ng-show="kelasForm.id.$invalid && !kelasForm.id.$pristine" class="help-block">id kelas harus diisi</p>
+			</div>
+		</div>
+
+
+		<!-- Text input-->
+		<div class="row" ng-class="{ 'has-error' : kelasForm.nama.$invalid && !kelasForm.nama.$pristine }">
+			<label class="col-xs-4">Nama kelas</label>  
+			<div class="col-xs-7" >
+			<input name="nama" ng-model="kelasObj.nama" type="text" placeholder="Nama Kelas" class="form-control input-xs input-sm" required>
+				<p ng-show="kelasForm.nama.$invalid && !kelasForm.nama.$pristine" class="help-block">Nama kelas harus diisi</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<button class="btn btn-lg btn-block btn-success" type="submit" 
+					ng-disabled="kelasForm.$invalid || kelasForm.$pristine"> Input
+			</button>
+		</div>
+	</div>
+</form>

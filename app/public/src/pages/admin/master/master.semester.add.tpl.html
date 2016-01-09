@@ -1,0 +1,46 @@
+<form name="semesterForm"  class="form-apps" role="administration" ng-controller="SemesterAddCtrl" ng-submit="submit(semesterForm)"  novalidate>
+	<div class="well well-sm">
+		<!-- Form Name -->
+
+		  <div class="alert alert-success">
+		    		<legend class="text-center">SEMESTER</legend>
+		    <p class="text-center"></p>
+		  </div>
+
+		<!-- Text input-->
+		<div class="row" ng-class="{ 'has-error' : semesterForm.id.$invalid && !semesterForm.id.$pristine }">
+			<label class="col-xs-4">ID </label>  
+			<div class="col-xs-7" >
+			<input name="id" ng-model="semesterObj.id" type="text" placeholder="Kode Semester" class="form-control input-xs input-sm" required>
+				<p ng-show="semesterForm.id.$invalid && !semesterForm.id.$pristine" class="help-block">id semester harus diisi</p>
+			</div>
+		</div>
+
+		<!-- Select Basic -->
+		<div class="row" ng-class="{ 'has-error' : semesterForm.nama.$invalid && !semesterForm.nama.$pristine }">
+			<label class="col-xs-4 " >Semester</label>
+			<div class="col-xs-7">
+				<select  name="semester" ng-model="semesterObj.nama" class="form-control input-sm">
+					<option value="Ganjil">Ganjil</option>
+					<option value="Genap">Genap</option>
+				</select>
+				<p ng-show="semesterForm.nama.$invalid && !semesterForm.nama.$pristine" class="help-block">Semester harus diisi</p>
+			</div>
+		</div>
+
+		<!-- Text input-->
+		<div class="row" ng-class="{ 'has-error' : semesterForm.tahunAjaran.$invalid && !semesterForm.tahunAjaran.$pristine }">
+			<label class="col-xs-4">Tahun Ajaran</label>  
+			<div class="col-xs-7" >
+			<input name="tahunAjaran" ng-model="semesterObj.tahunAjaran" type="text" placeholder="Tahun Ajaran" class="form-control input-xs input-sm" required>
+				<p ng-show="semesterForm.tahunAjaran.$invalid && !semesterForm.tahunAjaran.$pristine" class="help-block">Tahun Ajaran harus diisi</p>
+			</div>
+		</div>
+		
+		<div class="row">
+			<button class="btn btn-lg btn-block btn-success" type="submit"
+					ng-disabled="semesterForm.$invalid || semesterForm.$pristine"> Input
+			</button>
+		</div>
+	</div>
+</form>

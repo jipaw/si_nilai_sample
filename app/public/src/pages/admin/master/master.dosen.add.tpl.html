@@ -1,0 +1,35 @@
+<form name="dosenForm"  class="form-apps" role="administration" ng-submit="submit(dosenForm)" ng-controller="DosenAddCtrl" novalidate>
+	<div class="well well-sm">
+		<!-- Form Name -->
+
+		  <div class="alert alert-success">
+		    		<legend class="text-center">DOSEN</legend>
+		    <p class="text-center"></p>
+		  </div>
+
+		<!-- Text input-->
+		<div class="row" ng-class="{ 'has-error' : dosenForm.nidn.$invalid && !dosenForm.nidn.$pristine }">
+			<label class="col-xs-4">NIDN </label>  
+			<div class="col-xs-7" >
+			<input name="NIDN" ng-model="dosenObj.nidn" type="text" placeholder="NIDN" class="form-control input-xs input-sm" required>
+				<p ng-show="dosenForm.nidn.$invalid && !dosenForm.nidn.$pristine" class="help-block">nidn dosen harus diisi</p>
+			</div>
+		</div>
+
+
+		<!-- Text input-->
+		<div class="row" ng-class="{ 'has-error' : dosenForm.nama.$invalid && !dosenForm.nama.$pristine }">
+			<label class="col-xs-4">Nama Dosen</label>  
+			<div class="col-xs-7" >
+			<input name="nama" ng-model="dosenObj.nama" type="text" placeholder="Nama Dosen" class="form-control input-xs input-sm" required>
+				<p ng-show="dosenForm.nama.$invalid && !dosenForm.nama.$pristine" class="help-block">Nama dosen harus diisi</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<button class="btn btn-lg btn-block btn-success" type="submit" 
+					ng-disabled="dosenForm.$invalid || dosenForm.$pristine"> Input
+			</button>
+		</div>
+	</div>
+</form>

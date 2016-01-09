@@ -1,0 +1,8 @@
+<div class="jumbotron">
+  <div ng-switch="$stateParams.error">
+    <p class="text-danger" ng-switch-when="unauthorized">Anda belum terauthentikasi pada sistem</p>
+    <p class="text-danger" ng-switch-when="401">Silahkan login untuk masuk sistem.</p>
+    <p class="text-danger" ng-switch-when="502">Silahkan login untuk masuk sistem.</p>
+    <p class="text-danger" ng-switch-default>Terjadi kesalahan</p>
+  </div ng-switch>
+</div>

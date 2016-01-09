@@ -1,0 +1,50 @@
+<div class="container">
+      <div class="home-heading">
+      <h1>SISTEM INFORMASI NILAI</h1>
+      <p>Selamat Datang di Sistem Informasi Nilai</p>
+    </div>
+  <div class="row">
+        <!-- Boxes de Acoes -->
+    <div class="col-xs-12 col-sm-12 col-lg-12">
+      <div class="box">             
+        <div class="icon">
+          <div class="image"><i class="fa fa-flag"></i></div>
+          <div class="info">
+            <h3 class="title">SI Nilai</h3>
+              <p>
+                Anda sekarang berada di sistem Informasi Nilai.
+              Silahkan login untuk masuk ke menu administrasi data yang dibutuhkan. Bagi mahasiswa silahkan masukkan NPM dan password yang telah terdaftar. Bagi yang belum terdaftar silahkan klik pada menu register.
+            </p>
+          </div>
+        </div>
+        <div class="space"></div>
+      </div> 
+    </div>       
+    <!-- /Boxes de Acoes -->
+  </div>
+  <div class="info">
+    <div class="login-box">
+  <form class="form-horizontal " role="login" ng-submit="loginMe()">
+    <fieldset>
+    <div class="form-group">
+        <label for="inputUsername" class="col-md-4 control-label">NPM</label>
+        <div class="col-md-4">
+            <input type="text" class="form-control" id="inputUsername" placeholder="NPM" ng-model="login.username">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-md-4 control-label">Password</label>
+        <div class="col-md-4">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="login.password">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-4 col-md-10">
+            <button type="submit" class="btn btn-default hidden-devices btn-outline" ng-disabled="login.working">Login <i class="fa" ng-class="login.working ? 'fa-cog fa-spin' : 'fa-sign-in'"></i></button>
+        </div>
+    </div>
+    </fieldset>
+  </form>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div ng-controller="ngTableJurusanCtrl">
+    <table ng-table="tableParams" class="table ng-table-responsive ng-table-rowselected ">
+        <tr ng-repeat="jurusan in $data" ng-click='jurusan.$selected = !jurusan.$selected; changeSelection(jurusan)' ng-class="{'active': jurusan.$selected}">
+            <td data-title="'ID'" sortable="'idJurusan'">
+                {{jurusan.idJurusan}}
+            </td>
+            <td data-title="'Jurusan'">
+                {{jurusan.nama}}
+            </td>
+            <!--<td data-title="''">-->
+                <!--<a href="#" class="btn"><i class="fa fa-edit"></i></a>-->
+                <!--<a class="btn" ng-click="deleteData()"><i class="fa fa-trash-o"></i></a>-->
+            <!--</td>-->
+        </tr>
+    </table>
+</div>

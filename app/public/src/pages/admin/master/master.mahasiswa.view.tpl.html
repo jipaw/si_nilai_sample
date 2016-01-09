@@ -1,0 +1,31 @@
+<div ng-controller="ngTableMhsCtrl">
+    <table ng-table="tableParams" class="table ng-table-responsive ng-table-rowselected ">
+        <tr ng-repeat="mahasiswa in $data" ng-click='mahasiswa.$selected = !mahasiswa.$selected; changeSelection(mahasiswa)' ng-class="{'active': mahasiswa.$selected}">
+            <td data-title="'NPM'" sortable="'NPM'">
+                {{mahasiswa.NPM}}
+            </td>
+            <td data-title="'Nama'">
+                {{mahasiswa.nama}}
+            </td>
+            <td data-title="'Jenis Kelamin'">
+                {{mahasiswa.jk}}
+            </td>
+            <td data-title="'Tempat Lahir'">
+                {{mahasiswa.tmpt_lahir}}
+            </td>
+            <td data-title="'Tanggal Lahir'">
+                {{mahasiswa.tgl_lahir | date : dd-MM-yyyy}}
+            </td>
+            <td data-title="'Agama'">
+                {{mahasiswa.agama}}
+            </td>
+            <td data-title="'Keterangan'">
+                {{mahasiswa.keterangan}}
+            </td>
+            <!--<td data-title="''">-->
+                <!--<a href="#" class="btn"><i class="fa fa-edit"></i></a>-->
+                <!--<a class="btn" ng-click="deleteData()"><i class="fa fa-trash-o"></i></a>-->
+            <!--</td>-->
+        </tr>
+    </table>
+</div>

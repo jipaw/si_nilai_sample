@@ -1,0 +1,19 @@
+<div ng-controller="ngTableSemesterCtrl">
+    <table ng-table="tableParams" class="table ng-table-responsive ng-table-rowselected ">
+        <tr ng-repeat="semester in $data" ng-click='semester.$selected = !semester.$selected; changeSelection(semester)' ng-class="{'active': semester.$selected}">
+            <td data-title="'ID'" sortable="'idSemester'">
+                {{semester.idSemester}}
+            </td>
+            <td data-title="'Semester'">
+                {{semester.semester}}
+            </td>
+            <td data-title="'Tahun Ajaran'">
+                {{semester.tahun_ajaran}}
+            </td>
+            <!--<td data-title="''">-->
+                <!--<a href="#" class="btn"><i class="fa fa-edit"></i></a>-->
+                <!--<a class="btn" ng-click="deleteData()"><i class="fa fa-trash-o"></i></a>-->
+            <!--</td>-->
+        </tr>
+    </table>
+</div>

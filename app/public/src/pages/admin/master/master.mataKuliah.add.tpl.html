@@ -1,0 +1,44 @@
+<form name="mataKuliahForm"  class="form-apps" role="administration" ng-submit="submit(mataKuliahForm)" ng-controller="MataKuliahAddCtrl" novalidate>
+	<div class="well well-sm">
+		<!-- Form Name -->
+
+		  <div class="alert alert-success">
+		    		<legend class="text-center">MATA KULIAH</legend>
+		    <p class="text-center"></p>
+		  </div>
+
+		<!-- Text input-->
+		<div class="row" ng-class="{ 'has-error' : mataKuliahForm.id.$invalid && !mataKuliahForm.id.$pristine }">
+			<label class="col-xs-4">ID </label>  
+			<div class="col-xs-7" >
+			<input name="id" ng-model="mataKuliahObj.id" type="text" placeholder="Kode Mata Kuliah" class="form-control input-xs input-sm" required>
+				<p ng-show="mataKuliahForm.id.$invalid && !mataKuliahForm.id.$pristine" class="help-block">Kode Mata Kuliah harus diisi</p>
+			</div>
+		</div>
+
+
+		<!-- Text input-->
+		<div class="row" ng-class="{ 'has-error' : mataKuliahForm.nama.$invalid && !mataKuliahForm.nama.$pristine }">
+			<label class="col-xs-4">Mata Kuliah</label>  
+			<div class="col-xs-7" >
+			<input name="nama" ng-model="mataKuliahObj.nama" type="text" placeholder="Nama Mata Kuliah" class="form-control input-xs input-sm" required>
+				<p ng-show="mataKuliahForm.nama.$invalid && !mataKuliahForm.nama.$pristine" class="help-block">Nama Mata Kuliah harus diisi</p>
+			</div>
+		</div>
+
+		<!-- Text input-->
+		<div class="row" ng-class="{ 'has-error' : mataKuliahForm.sks.$invalid && !mataKuliahForm.sks.$pristine }">
+			<label class="col-xs-4">Jumlah SKS</label>  
+			<div class="col-xs-7" >
+			<input name="sks" ng-model="mataKuliahObj.sks" type="number" placeholder="Jumlah SKS" class="form-control input-xs input-sm" required>
+				<p ng-show="mataKuliahForm.sks.$invalid && !mataKuliahForm.sks.$pristine" class="help-block">SKS harus diisi</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<button class="btn btn-lg btn-block btn-success" type="submit" 
+					ng-disabled="mataKuliahForm.$invalid || mataKuliahForm.$pristine"> Input
+			</button>
+		</div>
+	</div>
+</form>

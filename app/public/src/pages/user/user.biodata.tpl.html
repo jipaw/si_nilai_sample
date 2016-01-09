@@ -1,0 +1,57 @@
+
+<div ng-controller="BiodataUserCtrl">
+    <div class="row">
+        <div class="col-xs-12  col-md-8">
+            <div class="well well-sm">
+                <div class="row">
+                	<div class="col-xs-12">
+                      <h4 class="text-center"><strong>DATA MAHASISWA</strong></h4>
+                    <hr/>
+                	</div>
+                  <hr/>
+                    <div class=" col-md-4">
+                      <div >
+                        <img src="/img/photo.png" alt="" class="img-rounded img-responsive" />
+                      </div>
+                    </div>
+                    <div class=" col-md-8">
+                      <table class="table table-condensed">
+                        <tr>
+                          <td><p><i class="glyphicon glyphicon-user"></i> Nama  </p></td>
+                          <td><p> {{nama}}</p></td>
+                        </tr>
+                        <tr>
+                          <td> <p><i class="glyphicon glyphicon-gift"></i> Tempat tgl Lahir </p></td>
+                          <td><p> {{tgl_lahir}}</p></td>
+                        </tr>
+                        <tr>
+                          <td><p><i class="glyphicon glyphicon-calendar"></i> Jenis Kelamin </p></td>
+                          <td><p> {{jk}}</p></td>
+                        </tr>
+                        <tr>
+                          <td><p><i class="glyphicon glyphicon-calendar"></i> Agama </p></td>
+                          <td><p> {{agama}}</p></td>
+                        </tr>
+                        <tr>
+                          <td><p><i class="glyphicon glyphicon-map-marker"></i> Alamat </p></td>
+                          <td><p> {{alamat}}</p></td>
+                        </tr>
+                        <tr>
+                          <td><p><i class="glyphicon glyphicon-earphone"></i> Telepon/ Hp</p></td>
+                          <td><p> {{telepon}}</p></td>
+                        </tr>
+                        <tr>
+                          <td><p><i class="glyphicon glyphicon-envelope"></i> Email </p></td>
+                          <td><p> {{email}}</p></td>
+                        </tr>
+                      </table>
+                        <!-- Split button --> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" >  
+    </div>
+</div>
+

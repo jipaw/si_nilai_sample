@@ -1,0 +1,41 @@
+ <div class="container" ng-controller="AdminController">  
+    <div class="row" >
+      <div class=" col-sm-3 col-md-2">
+        <div class="sidebar-nav0">
+          <div class="navbar0 navbar-default" role="navigation">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <span class="visible-xs navbar-brand">Sidebar Menu</span>
+            </div>
+
+            <div class="navbar-collapse collapse sidebar-navbar-collapse" ng-class="{'in':!navCollapsed}">
+              <div class='panel'>
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="glyphicon glyphicon-bookmark"></span><strong> QUICK MENU </strong></h3>
+                </div>
+                <div class="nav navbar-nav panel-body">
+                    <a ui-sref="app.admin.overview" class="btn btn-danger btn-xs btn-outline" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Overview</a>
+                    <a ui-sref="app.admin.master.mahasiswa.view" class="btn btn-info btn-xs btn-outline" role="button"><span class="glyphicon glyphicon-file"></span> <br/>Master</a>
+                    <a ui-sref="app.admin.nilai.view" class="btn btn-info btn-xs btn-outline" role="button"><span class="glyphicon glyphicon-file"></span> <br/>Nilai</a>
+                    <!--<a ui-sref="app.admin.laporan" class="btn btn-primary btn-xs btn-outline" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>Laporan</a>-->
+                    <a ui-sref="app.admin.akun.overview" class="btn btn-primary btn-xs btn-outline" role="button"><span class="glyphicon glyphicon-tag"></span> <br/>Akun</a>
+                   <!-- 
+                   <a ui-sref="app.gallery" class="btn btn-primary btn-xs btn-outline" role="button"><span class="glyphicon glyphicon-picture"></span> <br/>Galeri</a>
+                    <a href="#" class="btn btn-primary btn-xs btn-outline" role="button"><span class="glyphicon glyphicon-comment"></span> <br/>Pesan</a> 
+                  -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="col-sm-9 col-md-10">
+          <ui-view ></ui-view> 
+        </div>
+    </div>
+</div>

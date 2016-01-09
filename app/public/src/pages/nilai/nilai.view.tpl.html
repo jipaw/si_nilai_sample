@@ -1,0 +1,173 @@
+
+<div ng-controller="NilaiCtrl" >
+	<div class="row">
+		<div class="col-xs-12 text-center"><h3>NILAI AKADEMIK MAHASISWA</h3></div>
+		</br>
+	</div>
+	<div class="row" >
+		<div class="col-xs-12 text-center"><h4>{{nama_mhs}} / {{NPM}}</h4></div>
+	</div>    
+	<div class="row" >
+		<hr />
+		<tabset>
+		    <tab heading="Semester 1"  ng-click="loadData('/admin/nilai/I')" ng-init="loadData('/admin/nilai/I')">
+          <table class="table table-striped table-bordered table-hover table-condensed">
+          <tr>
+            <th>No</th><th>Mata Kuliah</th><th>SKS</th><th>Nilai UTS</th><th>Nilai UAS</th><th>Nilai Akhir</th>
+          </tr>
+          <tr data-ng-repeat="data in datas">
+            <td>{{data.no}}</td>
+            <td>{{data.nama}}</td>
+            <td>{{data.sks}}</td>
+            <td>{{data.uts}}</td>
+            <td>{{data.uas}}</td>
+            <td>{{data.nilai_akhir}}</td>
+          </tr>
+            <tr>
+              <td colspan="5">INDEKS PRESTASI SEMESTER</td>
+              <td>{{ip_semester | number : 2}}</td>
+            </tr>
+        </table>
+        </tab>
+		    <tab heading="Semester 2" ng-click="loadData('/admin/nilai/II')">
+          <table class="table table-striped table-bordered table-hover table-condensed">
+            <tr>
+              <th>No</th><th>Mata Kuliah</th><th>SKS</th><th>Nilai UTS</th><th>Nilai UAS</th><th>Nilai Akhir</th>
+            </tr>
+            <tr data-ng-repeat="data in datas ">
+              <td>{{data.no}}</td>
+              <td>{{data.nama}}</td>
+              <td>{{data.sks}}</td>
+              <td>{{data.uts}}</td>
+              <td>{{data.uas}}</td>
+              <td>{{data.nilai_akhir}}</td>
+              </tr>
+            <tr>
+              <td colspan="5">INDEKS PRESTASI SEMESTER</td>
+              <td>{{ip_semester | number : 2}}</td>
+            </tr>
+          </table>
+		    </tab>
+		    <tab heading="Semester 3" ng-click="loadData('/admin/nilai/III')">
+          <table class="table table-striped table-bordered table-hover table-condensed">
+            <tr>
+              <th>No</th><th>Mata Kuliah</th><th>SKS</th><th>Nilai UTS</th><th>Nilai UAS</th><th>Nilai Akhir</th>
+            </tr>
+            <tr data-ng-repeat="data in datas">
+              <td>{{data.no}}</td>
+              <td>{{data.nama}}</td>
+              <td>{{data.sks}}</td>
+              <td>{{data.uts}}</td>
+              <td>{{data.uas}}</td>
+              <td>{{data.nilai_akhir}}</td>
+            </tr>
+            <tr>
+              <td colspan="5">INDEKS PRESTASI SEMESTER</td>
+              <td>{{ip_semester | number : 2}}</td>
+            </tr>
+          </table>
+		    </tab>
+		    <tab heading="Semester 4" ng-click="loadData('/admin/nilai/IV')">
+          <table class="table table-striped table-bordered table-hover table-condensed">
+            <tr>
+              <th>No</th><th>Mata Kuliah</th><th>SKS</th><th>Nilai UTS</th><th>Nilai UAS</th><th>Nilai Akhir</th>
+            </tr>
+            <tr data-ng-repeat="data in datas">
+              <td>{{data.no}}</td>
+              <td>{{data.nama}}</td>
+              <td>{{data.sks}}</td>
+              <td>{{data.uts}}</td>
+              <td>{{data.uas}}</td>
+              <td>{{data.nilai_akhir}}</td>
+            </tr>
+            <tr>
+              <td colspan="5">INDEKS PRESTASI SEMESTER</td>
+              <td>{{ip_semester | number : 2}}</td>
+            </tr>
+          </table>
+		    </tab>
+		    <tab heading="Semester 5" ng-click="loadData('/admin/nilai/V')">
+          <table class="table table-striped table-bordered table-hover table-condensed">
+            <tr>
+              <th>No</th><th>Mata Kuliah</th><th>SKS</th><th>Nilai UTS</th><th>Nilai UAS</th><th>Nilai Akhir</th>
+            </tr>
+            <tr data-ng-repeat="data in datas">
+              <td>{{data.no}}</td>
+              <td>{{data.nama}}</td>
+              <td>{{data.sks}}</td>
+              <td>{{data.uts}}</td>
+              <td>{{data.uas}}</td>
+              <td>{{data.nilai_akhir}}</td>
+            </tr>
+            <tr>
+              <td colspan="5">INDEKS PRESTASI SEMESTER</td>
+              <td>{{ip_semester | number : 2}}</td>
+            </tr>
+          </table>
+		    </tab>
+		    <tab heading="Semester 6" ng-click="loadData('/admin/nilai/VI')">
+          <table class="table table-striped table-bordered table-hover table-condensed">
+            <tr>
+              <th>No</th><th>Mata Kuliah</th><th>SKS</th><th>Nilai UTS</th><th>Nilai UAS</th><th>Nilai Akhir</th>
+            </tr>
+            <tr data-ng-repeat="data in datas">
+              <td>{{data.no}}</td>
+              <td>{{data.nama}}</td>
+              <td>{{data.sks}}</td>
+              <td>{{data.uts}}</td>
+              <td>{{data.uas}}</td>
+              <td>{{data.nilai_akhir}}</td>
+            </tr>
+            <tr>
+              <td colspan="5">INDEKS PRESTASI SEMESTER</td>
+              <td>{{ip_semester | number : 2}}</td>
+            </tr>
+
+          </table>
+		    </tab>
+		    <tab heading="Semester 7" ng-click="loadData('/admin/nilai/VII')">
+          <table class="table table-striped table-bordered table-hover table-condensed">
+            <tr>
+              <th>No</th><th>Mata Kuliah</th><th>SKS</th><th>Nilai UTS</th><th>Nilai UAS</th><th>Nilai Akhir</th>
+            </tr>
+            <tr data-ng-repeat="data in datas">
+              <td>{{data.no}}</td>
+              <td>{{data.nama}}</td>
+              <td>{{data.sks}}</td>
+              <td>{{data.uts}}</td>
+              <td>{{data.uas}}</td>
+              <td>{{data.nilai_akhir}}</td>
+            </tr>
+            <tr>
+              <td colspan="5">INDEKS PRESTASI SEMESTER</td>
+              <td>{{ip_semester | number : 2}}</td>
+            </tr>
+          </table>
+		    </tab>
+		    <tab heading="Semester 8" ng-click="loadData('/admin/nilai/VIII')">
+          <table class="table table-striped table-bordered table-hover table-condensed">
+            <tr>
+              <th>No</th><th>Mata Kuliah</th><th>SKS</th><th>Nilai UTS</th><th>Nilai UAS</th><th>Nilai Akhir</th>
+            </tr>
+            <tr data-ng-repeat="data in datas">
+              <td>{{data.no}}</td>
+              <td>{{data.nama}}</td>
+              <td>{{data.sks}}</td>
+              <td>{{data.uts}}</td>
+              <td>{{data.uas}}</td>
+              <td>{{data.nilai_akhir}}</td>
+            </tr>
+            <tr>
+              <td colspan="5">INDEKS PRESTASI SEMESTER</td>
+              <td>{{ip_semester | number : 2}}</td>
+            </tr>
+          </table>
+		    </tab>
+		    <!--<tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disabled="tab.disabled">-->
+		      <!--{{tab.content}}-->
+		    <!--</tab>-->
+	  	</tabset>
+	  	<hr />
+	</div>
+</div>
+

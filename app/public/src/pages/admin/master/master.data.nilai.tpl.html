@@ -1,0 +1,71 @@
+<form class="form-apps" name="nilaiPesertaDidikForm" role="administration" ng-submit="submit(nilaiPesertaDidikForm)" ng-controller="nilaiPesertaDidikCtrl">
+	<div class="well well-sm">
+		<!-- Form Name -->
+		<legend>ID</legend>
+
+		<div class="row" >
+	    <pre>ID Peserta Didik</pre>
+	    <input type="text" ng-model="pesertaDidikObj.noInduk" placeholder="Silahkan masukkan No Induk Peserta Didik" typeahead="no_induk for no_induk in getPesertaDidik($viewValue)" typeahead-loading="loadPesertaDidik" class="form-control">
+	    <i ng-show="loadPesertaDidik" class="glyphicon glyphicon-refresh"></i>
+		</div>
+
+		<legend>NILAI</legend>
+		
+
+		<!-- Text input-->
+		<div class="row">
+			<label class="col-xs-4 " for="jenisKegiatan">Jenis Kegiatan</label>  
+			<div class="col-xs-4">
+			<input  name="jenisKegiatan" ng-model="pesertaDidikObj.jenisKegiatan" type="text" placeholder="Jenis Kegiatan" class="form-control input-xs input-sm">
+				
+			</div>
+		</div>
+
+		<!-- Text input-->
+		<div class="row">
+				<label class="col-xs-4 " for="tanggalKegiatan">Tanggal Kegiatan</label>  
+				<div class="col-md-6">
+						<p class="input-group">
+							<input type="text" name="tanggalKegiatan" class="form-control input-sm" datepicker-popup="{{format}}" ng-model="pesertaDidikObj.tanggalKegiatan" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default btn-sm" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+				</div>
+		</div>
+
+		<!-- Text input-->
+		<div class="row">
+			<label class="col-xs-4 " for="aspek">Aspek Penilaian</label>  
+			<div class="col-xs-5">
+			<input  name="aspek" ng-model="pesertaDidikObj.aspek" type="text" placeholder="Aspek Penilaian" class="form-control input-xs input-sm">
+				
+			</div>
+		</div>
+
+		<!-- Textarea -->
+		<div class="row">
+			<label class="col-xs-4 " for="textarea">Penilaian</label>
+			<div class="col-xs-8">                     
+				<textarea class="form-control input-xs input-sm" name="penilaian" ng-model="pesertaDidikObj.penilaian"> </textarea>
+			</div>
+		</div>
+
+		<!-- Textarea -->
+		<div class="row">
+			<label class="col-xs-4 " for="textarea">Saran</label>
+			<div class="col-xs-8">                     
+				<textarea class="form-control input-xs input-sm" name="saran" ng-model="pesertaDidikObj.saran"> </textarea>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<label class="col-md-3 " for="button1id"></label>
+			<div class="col-md-8">
+				<button name="button1id" class="btn btn-success">Submit</button>
+			</div>
+		</div>
+
+	</div>
+</form>

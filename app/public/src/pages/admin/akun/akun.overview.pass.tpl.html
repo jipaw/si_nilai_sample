@@ -1,0 +1,33 @@
+<div ng-controller="akunOverviewPassCtrl">
+	<form class="form-apps" name="passwordForm" role="registration" ng-submit="submit(passwordForm)">
+		<div class="well well-sm">
+			<div class="alert alert-success">
+				<h5 class=" text-center "><i class="fa fa-user"></i> Update Password</h5>
+				<p class="text-center"></p>
+			</div>
+			<div class="row">
+			    <input type="password" class="form-control password" placeholder="Password" name="password" ng-model="passwordObj.password" ng-minlength="4" ng-maxlength="16" ng-required="true" password-match="passwordObj.password2">
+			</div>
+			<div class="row">
+			    <input type="password" class="form-control password2" placeholder="Repeat Password" name="password2" ng-model="passwordObj.password2">
+			    <div class="errors" ng-class="{ active: passwordForm.password.$invalid && passwordForm.password.$dirty }">
+			    <div class="error ng-hide" ng-show="passwordForm.password.$error.match">
+			        <p>Password tidak cocok</p>
+			    </div>
+			    <div class="error ng-hide" ng-show="passwordForm.password.$error.minlength">
+			        <p>Password minimal 4 karakter</p>
+			    </div>
+			    <div class="error ng-hide" ng-show="passwordForm.password.$error.maxlength">
+			        <p>Password maksimal 16 karakter</p>
+			    </div>
+			</div>
+		  	<div class="row">
+			  	<button class="btn btn-lg btn-block" type="submit"
+			    ng-class="{ 'btn-primary': passwordForm.$valid && passwordForm.$dirty, 'btn-success': redirect }"
+			    ng-disabled="passwordForm.$invalid || passwordForm.$pristine || xhr ">
+			    <span >UPDATE <i class="fa fa-repeat fa-spin" ng-show="xhr"></i></span>
+			  	</button>
+		  	</div>
+		</div>
+	</form>
+</div>

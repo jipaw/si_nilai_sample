@@ -1,0 +1,35 @@
+<form name="mahasiswaForm"  class="form-apps" role="administration" ng-submit="submit(mahasiswaForm)" ng-controller="MhsAddCtrl"  novalidate>
+	<div class="well well-sm">
+		<!-- Form Name -->
+
+		  <div class="alert alert-success">
+		    		<legend class="text-center">MAHASISWA</legend>
+		    <p class="text-center"></p>
+		  </div>
+
+		<!-- Text input-->
+		<div class="row" ng-class="{ 'has-error' : mahasiswaForm.npm.$invalid && !mahasiswaForm.npm.$pristine }">
+			<label class="col-xs-4">NPM</label>  
+			<div class="col-xs-7" >
+			<input name="npm" ng-model="mahasiswaObj.npm" type="text" placeholder="NPM" class="form-control input-xs input-sm" required>
+				<p ng-show="mahasiswaForm.npm.$invalid && !mahasiswaForm.npm.$pristine" class="help-block">NPM harus diisi</p>
+			</div>
+		</div>
+
+
+		<!-- Text input-->
+		<div class="row" ng-class="{ 'has-error' : mahasiswaForm.nama.$invalid && !mahasiswaForm.nama.$pristine }">
+			<label class="col-xs-4">Nama mahasiswa</label>  
+			<div class="col-xs-7" >
+			<input name="nama" ng-model="mahasiswaObj.nama" type="text" placeholder="Nama Mahasiswa" class="form-control input-xs input-sm" required>
+				<p ng-show="mahasiswaForm.nama.$invalid && !mahasiswaForm.nama.$pristine" class="help-block">Nama mahasiswa harus diisi</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<button class="btn btn-lg btn-block btn-success" type="submit"
+					ng-disabled="mahasiswaForm.$invalid || mahasiswaForm.$pristine"> Input
+			</button>
+		</div>
+	</div>
+</form>
